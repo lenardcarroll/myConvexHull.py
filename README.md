@@ -33,7 +33,7 @@ The coordinate which has the greatest altered angle with p1 is then chosen as th
 
 The confirmation part of the algorithm starts by just doing a simple check if the coordinates are inside the resulting polygon using ```polygon.contains(Point(df['X'].iloc[i],df['Y'].iloc[i]))```. If all is inside, we're done. If the command gives back False, it must mean the point is on the polygon (the lines connecting it). The first simple check is just to see if these points aren't the points that make up the polygon. If it isn't, the following is done:
 
-First the dot product between (a-b) and (b-c) is calculated. If it is 0, then the points are collinear and they alongside the same line. If they are collinear, one needs to check if the point lies between the polygon/convex points. If it does, it must be on the line. If somehow the point is outside of the polygon, you will be informed and then you'll know the script doesn't fit your needs.
+The distance between polygon point pk and polygon point pm is calculated. Next the distance between pk and the target point is calculated, followed by the distance between pm and the target point. If d(pk,pm) = d(pk,pi) + d(pi,pm), then the point lies on the line. If somehow the point is outside of the polygon, you will be informed and then you'll know the script doesn't fit your needs.
 
 Below are example images of the script, ranging from very few points to hundreds of thousands of them (looks ridiculous though).
 
