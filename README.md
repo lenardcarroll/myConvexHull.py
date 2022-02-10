@@ -46,3 +46,4 @@ Below are example images of the script, ranging from very few points to hundreds
 ![Polygon with 10000 vertices](https://raw.githubusercontent.com/lenardcarroll/myConvexHull.py/main/fig7.jpeg "Polygon with 10000 vertices")
 ![Polygon with 100000 vertices](https://raw.githubusercontent.com/lenardcarroll/myConvexHull.py/main/fig8.jpeg "Polygon with 100000 vertices")
 
+The last one is obviously overkill and looks ugly, but it still worked.
