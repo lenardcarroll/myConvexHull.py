@@ -85,22 +85,10 @@ while j>-1:
         j+=1
 
 #This is a function used to check if point is on the lines connecting the convex/polygon
-def isBetween(a, b, c):
-    crossproduct = (c[1] - a[1]) * (b[0] - a[0]) - (c[0] - a[0]) * (b[1] - a[1])
+def dist2(a,b,c):
+    if np.abs(np.sqrt((a[0] - b[0])**2 + (a[1] - b[1])**2)-np.sqrt((a[0] - c[0])**2 + (a[1] - c[1])**2)-np.sqrt((c[0] - b[0])**2 + (c[1] - b[1])**2))<0.001:
+        return True
 
-    # compare versus epsilon for floating point values, or != 0 if using integers
-    if abs(crossproduct) > 0.01:
-        return False
-
-    dotproduct = (c[0] - a[0]) * (b[0] - a[0]) + (c[1] - a[1])*(b[1] - a[1])
-    if dotproduct < 0:
-        return False
-
-    squaredlengthba = (b[0] - a[0])*(b[0] - a[0]) + (b[1] - a[1])*(b[1] - a[1])
-    if dotproduct > squaredlengthba:
-        return False
-
-    return True
 
 #Script confirms that point is either in or on the polygon
 if args.confirm == 'Y':
@@ -120,7 +108,7 @@ if args.confirm == 'Y':
                 for k in range(len(convex_points)):
                     for l in range(len(convex_points)):
                         if k!=l:
-                            if isBetween(convex_points[k],[df['X'].iloc[i],df['Y'].iloc[i]],convex_points[l]) == True:
+                            if dist2(convex_points[k],convex_points[l],[df['X'].iloc[i],df['Y'].iloc[i]]) == True:
                                 dotp.append(1)
                 if len(dotp)==0:
                     print("Convex Hull Script Failed! Sorry :(")
