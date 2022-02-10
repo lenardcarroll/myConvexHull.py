@@ -38,3 +38,11 @@ First the dot product between (a-b) and (b-c) is calculated. If it is 0, then th
 Below are example images of the script, ranging from very few points to hundreds of thousands of them (looks ridiculous though).
 
 ![Polygon with 5 vertices](https://raw.githubusercontent.com/lenardcarroll/myConvexHull.py/main/fig1.jpeg "Polygon with 5 vertices")
+![Polygon with 6 vertices](https://raw.githubusercontent.com/lenardcarroll/myConvexHull.py/main/fig2.jpeg "Polygon with 6 vertices")
+![Polygon with 10 vertices](https://raw.githubusercontent.com/lenardcarroll/myConvexHull.py/main/fig3.jpeg "Polygon with 10 vertices")
+![Polygon with 50 vertices](https://raw.githubusercontent.com/lenardcarroll/myConvexHull.py/main/fig4.jpeg "Polygon with 50 vertices")
+![Polygon with 100 vertices](https://raw.githubusercontent.com/lenardcarroll/myConvexHull.py/main/fig5.jpeg "Polygon with 100 vertices")
+![Polygon with 1000 vertices](https://raw.githubusercontent.com/lenardcarroll/myConvexHull.py/main/fig6.jpeg "Polygon with 1000 vertices")
+![Polygon with 10000 vertices](https://raw.githubusercontent.com/lenardcarroll/myConvexHull.py/main/fig7.jpeg "Polygon with 10000 vertices")
+![Polygon with 100000 vertices](https://raw.githubusercontent.com/lenardcarroll/myConvexHull.py/main/fig8.jpeg "Polygon with 100000 vertices")
+
