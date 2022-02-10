@@ -37,3 +37,4 @@ First the dot product between (a-b) and (b-c) is calculated. If it is 0, then th
 
 Below are example images of the script, ranging from very few points to hundreds of thousands of them (looks ridiculous though).
 
+![Polygon with 5 vertices](https://raw.githubusercontent.com/lenardcarroll/myConvexHull.py/main/fig1.jpeg "Polygon with 5 vertices")
