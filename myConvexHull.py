@@ -115,15 +115,16 @@ if args.confirm == 'Y':
                 dist = np.abs((df['X'].iloc[i]-j[0])**2+(df['Y'].iloc[i]-j[1])**2)
                 if dist<0.001:
                     convex_close.append(dist)
-            dotp = []
-            for k in range(len(convex_points)):
-                for l in range(len(convex_points)):
-                    if k!=l:
-                        if isBetween(convex_points[k],[df['X'].iloc[i],df['Y'].iloc[i]],convex_points[l]) == True:
-                            dotp.append(1)
-            if len(dotp)==0:
-                print("Convex Hull Script Failed! Sorry :(")
-                print(df['X'].iloc[i],df['Y'].iloc[i])
+            if len(convex_close)==0:
+                dotp = []
+                for k in range(len(convex_points)):
+                    for l in range(len(convex_points)):
+                        if k!=l:
+                            if isBetween(convex_points[k],[df['X'].iloc[i],df['Y'].iloc[i]],convex_points[l]) == True:
+                                dotp.append(1)
+                if len(dotp)==0:
+                    print("Convex Hull Script Failed! Sorry :(")
+                    print(df['X'].iloc[i],df['Y'].iloc[i])
 
 #Convex points are printed to console
 if args.print == 'Y':
