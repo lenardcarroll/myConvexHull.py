@@ -51,6 +51,9 @@ convex_points = [[points[0][0],points[0][1]]]
 #Give the first point an angle 90
 angles = [90]
 
+def sqrtdist(a,b):
+    return np.sqrt((a[0]-b[0])**2+(a[1]-b[1])**2)
+
 #Algorithm starts, check https://github.com/lenardcarroll/myConvexHull.py/blob/main/README.md for an explanation
 j = 0
 while j>-1:
@@ -76,7 +79,7 @@ while j>-1:
     convex_points_unaltered_angle = unaltered_angles[altered_angles.index(max_altered_angle)]
     angles.append(convex_points_unaltered_angle)
 
-    if convex_points_max == convex_points[0]:
+    if sqrtdist(convex_points_max,convex_points[0])<0.001:
         j=-1
     if j > 0:
         points.remove(convex_points_max)
@@ -88,7 +91,6 @@ while j>-1:
 def dist2(a,b,c):
     if np.abs(np.sqrt((a[0] - b[0])**2 + (a[1] - b[1])**2)-np.sqrt((a[0] - c[0])**2 + (a[1] - c[1])**2)-np.sqrt((c[0] - b[0])**2 + (c[1] - b[1])**2))<0.001:
         return True
-
 
 #Script confirms that point is either in or on the polygon
 if args.confirm == 'Y':
